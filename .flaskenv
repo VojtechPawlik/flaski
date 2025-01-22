@@ -1,0 +1,9 @@
+SECRET_KEY=gsdfgmerlkjlkerjwylkjt
+FLASK_APP=flask_for_startups.py
+FLASK_DEBUG=1
+FLASK_CONFIG=dev
+DEV_DATABASE_URI='sqlite:///site.db'
+TEST_DATABASE_URI=postgresql://your_user:your_password@localhost/test_flask_for_startups
+TEST_DATABASE_URI=postgresql://your_user:your_password@localhost/test_flask_for_startups
+REMEMBER_COOKIE_HTTPONLY=True
+SESSION_COOKIE_SAMESITE=Lax

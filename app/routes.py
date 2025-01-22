@@ -22,6 +22,7 @@ db = db_manager.session
 from flask_wtf import FlaskForm, RecaptchaField
 from wtforms import StringField, PasswordField, BooleanField, SubmitField,DateField
 from wtforms.validators import DataRequired, Email, EqualTo, Length,InputRequired
+from wtforms.validators import Regexp
 
 class FormFormular(FlaskForm):
     name = StringField('Name', validators=[ InputRequired(message="You can't leave this empty")])
@@ -40,7 +41,7 @@ def formular():
 # Request management
 class KnihaForm(FlaskForm):
     nazev = StringField('nazev', validators=[InputRequired(message="Title is required"), Length(max=255)])
-    iban = StringField('iban', validators=[InputRequired(message="Author is required"), Length(max=255)])
+    iban = StringField('iban', validators=[InputRequired(message="Author is required"), Length(max=255), Regexp('^[0-9]*$', message="Only numeric values are allowed")])
     popisek = StringField('popisek', validators=[InputRequired(message="Published date is required")])
 
 @bp.route("/add_kniha", methods=["GET", "POST"])
